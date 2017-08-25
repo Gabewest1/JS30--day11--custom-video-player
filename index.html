@@ -1,15 +1,19 @@
 <html>
 <head>
     <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <div class="video-container">
-        <video width="560" height="315">
+        <video>
             <source src="The Bourne Ultimatum - Trailer.mp4">
         </video>
         <div class="video-controls">
-            <div class="play-btn"></div>
-            
+            <input type="range" class="video-progress-bar" min=0 value=0 step=1></input>
+            <div class="play-btn">Play</div>
+            <input type="range" class="volume-bar" min=0 step=.1 max=1></input>
+            <div class="skip-back-btn">Back</div>
+            <div class="skip-forward-btn">Forward</div>
         </div>
     </div>
     <script src="VideoControls.js"></script>
