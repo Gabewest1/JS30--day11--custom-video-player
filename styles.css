@@ -18,6 +18,11 @@ body {
     grid-template-areas:
         "progressBar progressBar progressBar progressBar"
         "play volumeBar skipForward skipBack";
+    opacity: 0;
+    pointer-events: none;
+    transition: 
+        transform .5s linear,
+        opacity .7s linear;
 }
 
 .video-container {
@@ -45,4 +50,10 @@ body {
 
 .skip-forward-btn {
     grid-area: skipForward;
+}
+
+.showVideoControls {
+    pointer-events: initial;
+    transform: translateY(-100%);
+    opacity: 1;
 }

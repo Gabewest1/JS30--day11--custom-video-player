@@ -1,6 +1,7 @@
 class VideoControls {
     constructor(video) {
         this.video = document.querySelector(".video-container video")
+        this.videoControls = document.querySelector(".video-controls")
         this.videoProgressBar = document.querySelector(".video-progress-bar")
         this.playButton = document.querySelector(".play-btn")
         this.skipForwardsButton = document.querySelector(".skip-forward-btn")
@@ -10,6 +11,10 @@ class VideoControls {
         /* Setup event listeners */
         this.video.addEventListener("timeupdate", () => this.setVideoProgressBar(this.video.currentTime))
         this.video.addEventListener("canplay", () => this.videoProgressBar.max = Math.floor(this.video.duration))
+        this.video.addEventListener("mouseenter", this.showVideoControls.bind(this))
+        this.video.addEventListener("mouseleave", this.hideVideoControls.bind(this))
+        this.videoControls.addEventListener("mouseenter", this.showVideoControls.bind(this))
+        this.videoControls.addEventListener("mouseleave", this.hideVideoControls.bind(this))
         this.videoProgressBar.addEventListener("change", () => this.video.currentTime = this.videoProgressBar.value)
         this.playButton.addEventListener("click", this.toggleVideo.bind(this))
         this.skipForwardsButton.addEventListener("click", this.skipForwards.bind(this))
@@ -18,6 +23,15 @@ class VideoControls {
         
         //Set the volume to match the default value of the volumeBar
         this.setVolume(this.volumeBar.value)
+    }
+    
+    showVideoControls() {
+        console.log("AYYYY")
+        this.videoControls.classList.add("showVideoControls")
+    }
+
+    hideVideoControls() {
+        this.videoControls.classList.remove("showVideoControls")
     }
 
     setVideoProgressBar(value) {
