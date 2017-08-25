@@ -5,3 +5,44 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.play-btn, .skip-back-btn, .skip-forward-btn {
+    text-align: center;
+}
+
+.video-controls {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 0fr auto 0fr 0fr;
+    grid-column-gap: 2em;
+    grid-template-areas:
+        "progressBar progressBar progressBar progressBar"
+        "play volumeBar skipForward skipBack";
+}
+
+.video-container {
+    width: 80%;
+}
+
+.video-container video {
+    max-width: 100%;
+}
+
+.video-progress-bar {
+    grid-area: progressBar;
+}
+
+.volume-bar {
+    grid-area: volumeBar;
+}
+.play-btn {
+    grid-area: play;
+}
+
+.skip-back-btn {
+    grid-area: skipBack;
+}
+
+.skip-forward-btn {
+    grid-area: skipForward;
+}
