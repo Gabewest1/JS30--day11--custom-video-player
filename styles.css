@@ -11,6 +11,7 @@ body {
 }
 
 .video-controls {
+    background-color: rgba(32, 32, 32, .5);
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 0fr auto 0fr 0fr;
@@ -42,6 +43,7 @@ body {
 }
 .play-btn {
     grid-area: play;
+    width: 35px;
 }
 
 .skip-back-btn {
